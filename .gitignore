@@ -10,6 +10,12 @@
 /Saved/
 /Build/
 
+/Plugins/**/Binaries/
+/Plugins/**/DerivedDataCache/
+/Plugins/**/Intermediate/
+/Plugins/**/Saved/
+/Plugins/**/Build/
+
 # User-specific files
 *.rsuser
 *.suo

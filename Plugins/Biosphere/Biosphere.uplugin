@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "Biosphere",
+	"Description": "A lightweight, extensible plugin for simulating flora and fauna in Unreal Engine. Provides plug-and-play population growth, reproduction, and interaction systems with Blueprint and C++ APIs. Includes optional editor tools for defining species and spawning rules, while remaining easy to customize and extend for any game world.",
+	"Category": "Other",
+	"CreatedBy": "Terros Digital",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": true,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "Biosphere",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}

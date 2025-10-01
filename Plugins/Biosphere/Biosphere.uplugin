@@ -16,8 +16,13 @@
 	"Installed": false,
 	"Modules": [
 		{
-			"Name": "Biosphere",
+			"Name": "BiosphereRuntime",
 			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "BiosphereEditor",
+			"Type": "Editor",
 			"LoadingPhase": "Default"
 		}
 	]

@@ -2,9 +2,9 @@
 
 using UnrealBuildTool;
 
-public class Biosphere : ModuleRules
+public class BiosphereEditor : ModuleRules
 {
-	public Biosphere(ReadOnlyTargetRules Target) : base(Target)
+    public BiosphereEditor(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 		
@@ -26,6 +26,7 @@ public class Biosphere : ModuleRules
 			new string[]
 			{
 				"Core",
+                "BiosphereRuntime"
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
@@ -38,6 +39,11 @@ public class Biosphere : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore",
+                "UnrealEd",
+                "AssetTools",
+                "GraphEditor",
+                "EditorFramework",
+				"ToolMenus"
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);

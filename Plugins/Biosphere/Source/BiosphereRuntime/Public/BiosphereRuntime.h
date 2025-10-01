@@ -4,7 +4,7 @@
 
 #include "Modules/ModuleManager.h"
 
-class FBiosphereModule : public IModuleInterface
+class FBiosphereRuntimeModule : public IModuleInterface
 {
 public:
 

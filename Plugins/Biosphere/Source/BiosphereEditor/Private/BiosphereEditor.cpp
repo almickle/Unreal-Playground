@@ -3,12 +3,18 @@
 #include "BiosphereEditor.h"
 #include "AssetToolsModule.h"                 // IAssetTools, FAssetToolsModule
 #include "IAssetTools.h"
-#include "AssetTypeActions_FoodWeb.h"
+#include "AssetTypeActions.h"
 
 #define LOCTEXT_NAMESPACE "FBiosphereEditorModule"
 
+uint32 FBiosphereEditorModule::BiosphereAssetCategoryBit = EAssetTypeCategories::Misc; // fallback
+
 void FBiosphereEditorModule::StartupModule()
 {
+	IAssetTools& AssetTools = FModuleManager::LoadModuleChecked<FAssetToolsModule>( "AssetTools" ).Get();
+	const FText CategoryName = LOCTEXT( "BiosphereAssetCategory", "Biosphere" );
+	BiosphereAssetCategoryBit = AssetTools.RegisterAdvancedAssetCategory( FName( "Biosphere" ), CategoryName );
+
 	RegisterAssetTypeActions();
 }
 
@@ -23,10 +29,14 @@ void FBiosphereEditorModule::RegisterAssetTypeActions()
 	if( FModuleManager::Get().IsModuleLoaded( "AssetTools" ) )
 	{
 		IAssetTools& AssetTools = FAssetToolsModule::GetModule().Get();
-		// Create and register your action(s)
-		TSharedPtr<IAssetTypeActions> FoodWebActions = MakeShared<FAssetTypeActions_FoodWeb>();
-		AssetTools.RegisterAssetTypeActions( FoodWebActions.ToSharedRef() );
-		RegisteredAssetTypeActions.Add( FoodWebActions );
+		// Biosphere asset type actions
+		TSharedPtr<IAssetTypeActions> BiosphereActions = MakeShared<FAssetTypeActions_Biosphere>();
+		AssetTools.RegisterAssetTypeActions( BiosphereActions.ToSharedRef() );
+		RegisteredAssetTypeActions.Add( BiosphereActions );
+		// Species asset type actions
+		TSharedPtr<IAssetTypeActions> SpeciesActions = MakeShared<FAssetTypeActions_Species>();
+		AssetTools.RegisterAssetTypeActions( SpeciesActions.ToSharedRef() );
+		RegisteredAssetTypeActions.Add( SpeciesActions );
 	}
 }
 

@@ -2,10 +2,10 @@
 
 #include "CoreMinimal.h"
 #include "EdGraph/EdGraphSchema.h"
-#include "FoodWebSchema.generated.h"
+#include "FoodWebGraphSchema.generated.h"
 
 UCLASS()
-class BIOSPHEREEDITOR_API UFoodWebSchema : public UEdGraphSchema
+class BIOSPHEREEDITOR_API UFoodWebGraphSchema : public UEdGraphSchema
 {
 	GENERATED_BODY()
 public:

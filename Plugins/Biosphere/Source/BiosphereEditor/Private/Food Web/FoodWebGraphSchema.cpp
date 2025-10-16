@@ -1,11 +1,11 @@
-#include "FoodWebSchema.h"
+#include "Food Web/FoodWebGraphSchema.h"
 #include "EdGraph/EdGraph.h"
 #include "EdGraph/EdGraphNode.h"
 #include "EdGraph/EdGraphPin.h"
 #include "ToolMenus.h"
 
 // Add "Add Species" to the context menu
-void UFoodWebSchema::GetGraphContextActions( FGraphContextMenuBuilder& ContextMenuBuilder ) const
+void UFoodWebGraphSchema::GetGraphContextActions( FGraphContextMenuBuilder& ContextMenuBuilder ) const
 {
 	// Placeholder: Add a simple menu entry
 	ContextMenuBuilder.AddAction( MakeShareable( new FEdGraphSchemaAction(
@@ -17,7 +17,7 @@ void UFoodWebSchema::GetGraphContextActions( FGraphContextMenuBuilder& ContextMe
 }
 
 // Allow any node.Out -> node.In
-const FPinConnectionResponse UFoodWebSchema::CanCreateConnection( const UEdGraphPin* A, const UEdGraphPin* B ) const
+const FPinConnectionResponse UFoodWebGraphSchema::CanCreateConnection( const UEdGraphPin* A, const UEdGraphPin* B ) const
 {
 	if( A->Direction == EGPD_Output && B->Direction == EGPD_Input )
 	{
@@ -31,7 +31,7 @@ const FPinConnectionResponse UFoodWebSchema::CanCreateConnection( const UEdGraph
 }
 
 // Optionally, create default nodes for the graph
-void UFoodWebSchema::CreateDefaultNodesForGraph( UEdGraph& Graph ) const
+void UFoodWebGraphSchema::CreateDefaultNodesForGraph( UEdGraph& Graph ) const
 {
 	// Placeholder: No default nodes
 }

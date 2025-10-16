@@ -1,4 +1,4 @@
-#include "FoodWebSpeciesNode.h"
+#include "Food Web/FoodWebSpeciesNode.h"
 #include "EdGraph/EdGraphPin.h"
 
 void UFoodWebSpeciesNode::AllocateDefaultPins()
